@@ -31,6 +31,11 @@
     >
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
+      <v-layout justify-end>
+        <v-flex shrink>
+          <Thumbnails/>
+        </v-flex>
+      </v-layout>
     </v-toolbar>
     <v-content>
       <v-container>
@@ -47,7 +52,12 @@
 </template>
 
 <script>
+import Thumbnails from '@/components/Thumbnails'
+
 export default {
+  components: {
+    Thumbnails
+  },
   data() {
     return {
       clipped: false,

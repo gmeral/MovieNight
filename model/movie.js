@@ -9,6 +9,11 @@ class Movie {
     return path ? `https://image.tmdb.org/t/p/w500${path}` : ''
   }
 
+  thumbnailPath() {
+    let path = this.imdbMovie.poster_path
+    return path ? `https://image.tmdb.org/t/p/w92${path}` : ''
+  }
+
   title() {
     return this.imdbMovie.original_title
   }
