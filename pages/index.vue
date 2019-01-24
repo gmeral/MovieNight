@@ -1,12 +1,6 @@
 <template>
   <div>
-    <v-layout v-for="(movie, index) in movies" :key="index" shrink class="mt-3">
-      <img :src="movie.posterPath()" />
-      <v-layout column class="ml-3">
-        <h1 class="mt-3">{{movie.title()}}</h1>
-        <div class="mt-3">{{movie.description()}}</div>
-      </v-layout>
-    </v-layout>
+    <movie-summary v-for="(movie, index) in movies" :key="index" class="mt-3" :movie="movie"/>
     <template v-if="movies.length == 0">
       <div>No movie has been selected</div>
       <nuxt-link to="/search">Go to search</nuxt-link>
@@ -15,7 +9,12 @@
 </template>
 
 <script>
+import MovieSummary from '@/components/MovieSummary'
+
 export default {
+  components: {
+    MovieSummary
+  },
   data() {
     return {
       userMovieInput: ''
