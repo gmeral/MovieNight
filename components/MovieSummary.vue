@@ -10,7 +10,11 @@
 </template>
 
 <script>
+import Movie from '@/model/movie.js'
+
 export default {
-  props: ['movie']
+  props: {
+    movie: Movie
+  }
 }
 </script>

@@ -41,5 +41,8 @@ export const getters = {
 export const mutations = {
   addMovie(state, movie) {
     Vue.set(state.movies, movie.id(), movie)
+  },
+  removeMovie(state, movie) {
+    Vue.delete(state.movies, movie.id())
   }
 }
